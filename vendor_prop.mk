@@ -112,6 +112,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=480 \
     sdm.debug.rotator_downscale=1 \
     vendor.display.enable_default_color_mode=1
+    vendor.display.disable_inline_rotator=1 \
     vendor.display.disable_partial_split=1 \
 
 # LED
