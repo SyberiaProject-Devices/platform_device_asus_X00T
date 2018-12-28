@@ -33,6 +33,8 @@ import android.preference.PreferenceManager;
 import com.asus.zenparts.KernelControl;
 import com.asus.zenparts.settings.ScreenOffGesture;
 
+import com.asus.zenparts.dirac.DiracUtils;
+
 import java.io.File;
 
 public class Startup extends BroadcastReceiver {
@@ -68,6 +70,7 @@ public class Startup extends BroadcastReceiver {
 
         VibratorStrengthPreference.restore(context);
         DisplayCalibration.restore(context);
+        DiracUtils.initialize();
     }
 
     private boolean getPreferenceBoolean(Context context, String key, boolean defaultValue) {
