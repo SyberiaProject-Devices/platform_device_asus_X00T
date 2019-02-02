@@ -70,7 +70,7 @@ public class Startup extends BroadcastReceiver {
 
         VibratorStrengthPreference.restore(context);
         DisplayCalibration.restore(context);
-        DiracUtils.initialize();
+        DiracUtils.initialize(context);
     }
 
     private boolean getPreferenceBoolean(Context context, String key, boolean defaultValue) {
