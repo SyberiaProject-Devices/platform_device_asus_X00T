@@ -25,9 +25,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.SystemProperties;
 import android.support.v14.preference.PreferenceFragment;
-import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceManager;
@@ -43,19 +41,15 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.util.Log;
 
-public class DeviceSettings extends PreferenceFragment implements
-        Preference.OnPreferenceChangeListener {
+public class DeviceSettings extends PreferenceFragment {
 
     private static final String KEY_CATEGORY_DISPLAY = "display";
-    private static final String SPECTRUM_KEY = "spectrum";
-    private static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
     public static final String KEY_VIBSTRENGTH = "vib_strength";
 
     private TwoStatePreference mTapToWakeSwitch;
     private VibratorStrengthPreference mVibratorStrength;
 
     private Preference mKcalPref;
-    private ListPreference mSPECTRUM;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -71,12 +65,6 @@ public class DeviceSettings extends PreferenceFragment implements
             }
         });
 
-        mSPECTRUM = (ListPreference) findPreference(SPECTRUM_KEY);
-        if( mSPECTRUM != null ) {
-            mSPECTRUM.setValue(SystemProperties.get(SPECTRUM_SYSTEM_PROPERTY, "0"));
-            mSPECTRUM.setOnPreferenceChangeListener(this);
-        }
-
         mVibratorStrength = (VibratorStrengthPreference) findPreference(KEY_VIBSTRENGTH);
         if (mVibratorStrength != null) {
             mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
@@ -86,19 +74,5 @@ public class DeviceSettings extends PreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
         return super.onPreferenceTreeClick(preference);
-    }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        final String key = preference.getKey();
-        boolean value;
-        String strvalue;
-        if (SPECTRUM_KEY.equals(key)) {
-            strvalue = (String) newValue;
-            SystemProperties.set(SPECTRUM_SYSTEM_PROPERTY, strvalue);
-            return true;
-        }
-
-        return true;
     }
 }

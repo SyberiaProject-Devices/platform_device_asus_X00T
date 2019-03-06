@@ -505,8 +505,4 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     ZenfoneParts
 
-# ZenMotions
-PRODUCT_PACKAGES += \
-    Zenmotions
-
 $(call inherit-product, vendor/asus/X00T/X00T-vendor.mk)

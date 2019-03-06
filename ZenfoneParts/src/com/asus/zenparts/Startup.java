@@ -21,9 +21,19 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.preference.PreferenceManager;
 import android.provider.Settings;
 import android.text.TextUtils;
+
+import android.app.Activity;
+import android.content.ComponentName;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.preference.PreferenceManager;
+
+import com.asus.zenparts.KernelControl;
+import com.asus.zenparts.settings.ScreenOffGesture;
+
+import java.io.File;
 
 public class Startup extends BroadcastReceiver {
 
@@ -44,9 +54,35 @@ public class Startup extends BroadcastReceiver {
     }
 
     @Override
-    public void onReceive(final Context context, final Intent bootintent) {
+    public void onReceive(final Context context, final Intent intent) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+
+        if (intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
+                enableComponent(context, ScreenOffGesture.class.getName());
+                SharedPreferences screenOffGestureSharedPreferences = context.getSharedPreferences(
+                        ScreenOffGesture.GESTURE_SETTINGS, Activity.MODE_PRIVATE);
+                KernelControl.enableGestures(
+                        screenOffGestureSharedPreferences.getBoolean(
+                        ScreenOffGesture.PREF_GESTURE_ENABLE, true));
+         }
+
         VibratorStrengthPreference.restore(context);
         DisplayCalibration.restore(context);
+    }
+
+    private boolean getPreferenceBoolean(Context context, String key, boolean defaultValue) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        return preferences.getBoolean(key, defaultValue);
+    }
+
+    private void enableComponent(Context context, String component) {
+        ComponentName name = new ComponentName(context, component);
+        PackageManager pm = context.getPackageManager();
+        if (pm.getComponentEnabledSetting(name)
+                == PackageManager.COMPONENT_ENABLED_STATE_DISABLED) {
+            pm.setComponentEnabledSetting(name,
+                    PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                    PackageManager.DONT_KILL_APP);
+        }
     }
 }
