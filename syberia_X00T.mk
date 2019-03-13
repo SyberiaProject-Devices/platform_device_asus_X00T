@@ -41,3 +41,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := Android/sdm660_64/sdm660_64:8.1.0/OPM1/15.2016.1805.318-20180712:user/release-keys
+
+SYBERIA_BUILD_TYPE := OFFICIAL

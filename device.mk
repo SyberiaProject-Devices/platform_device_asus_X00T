@@ -505,4 +505,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     ZenfoneParts
 
+# OTA Updates
+PRODUCT_PACKAGES += \
+    Updates
+
 $(call inherit-product, vendor/asus/X00T/X00T-vendor.mk)
