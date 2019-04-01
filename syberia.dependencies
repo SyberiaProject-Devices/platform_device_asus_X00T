@@ -1,16 +1,16 @@
 [
   {
-    "repository": "KudProject/android_hardware_qcom_display",
+    "repository": "KudProject/hardware_qcom_display-caf",
     "target_path": "hardware/qcom/display-caf/msm8998",
     "branch": "lineage-16.0/msm8998"
   },
    {
-    "repository": "KudProject/android_hardware_qcom_media",
+    "repository": "KudProject/hardware_qcom_media-caf",
     "target_path": "hardware/qcom/media-caf/msm8998",
     "branch": "lineage-16.0/msm8998"
   },
    {
-    "repository": "KudProject/android_hardware_qcom_audio",
+    "repository": "KudProject/hardware_qcom_audio-caf",
     "target_path": "hardware/qcom/audio-caf/msm8998",
     "branch": "lineage-16.0/msm8998"
   },
