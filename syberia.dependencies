@@ -1,0 +1,27 @@
+[
+ {
+  "repository" : "prometheusXderpgang/proprietary_vendor_asus",
+  "target_path": "vendor/asus",
+  "branch"     : "pie"     
+ },
+ {
+  "repository" : "KudProject/kernel_asus_sdm660",
+  "target_path": "kernel/asus/sdm660",
+  "branch"     : "lineage-16.0"
+ },
+ {
+  "repository" : "rashedsahaji/android_hardware_qcom_display",
+  "target_path": "hardware/qcom/display-caf/msm8998",
+  "branch"     : "lineage-16.0-caf-8998"
+ },
+ {
+  "repository" : "LineageOS/android_hardware_qcom_audio",
+  "target_path": "hardware/qcom/audio-caf/msm8998",
+  "branch"     : "lineage-16.0-caf-8998"
+ },
+ {
+  "repository" : "LineageOS/android_hardware_qcom_media",
+  "target_path": "hardware/qcom/media-caf/msm8998",
+  "branch"     : "lineage-16.0-caf-8998"
+ }
+]
