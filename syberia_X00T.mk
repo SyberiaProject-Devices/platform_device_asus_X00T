@@ -51,3 +51,5 @@ PRODUCT_VENDOR_PROPERTY_BLACKLIST := \
     ro.vendor.product.device \
     ro.vendor.product.model \
     ro.vendor.product.name
+
+TARGET_BOOT_ANIMATION_RES := 2160
