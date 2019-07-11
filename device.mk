@@ -213,6 +213,10 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \
     android.hardware.health@2.0-service
 
+#OTA Updates
+PRODUCT_PACKAGES += \
+    Updates
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
