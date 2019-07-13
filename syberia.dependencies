@@ -1,6 +1,6 @@
 [
  {
-  "repository" : "prometheusXderpgang/proprietary_vendor_asus",
+  "repository" : "DerpGang/proprietary_vendor_asus",
   "target_path": "vendor/asus",
   "branch"     : "pie"     
  },
@@ -10,9 +10,9 @@
   "branch"     : "lineage-16.0"
  },
  {
-  "repository" : "rashedsahaji/android_hardware_qcom_display",
+  "repository" : "rebenok90x/android_hardware_qcom_display",
   "target_path": "hardware/qcom/display-caf/msm8998",
-  "branch"     : "lineage-16.0-caf-8998"
+  "branch"     : "master"
  },
  {
   "repository" : "LineageOS/android_hardware_qcom_audio",
