@@ -105,7 +105,7 @@ void vendor_check_variant()
 {
     struct sysinfo sys;
     char const *region_file = "/mnt/vendor/persist/flag/countrycode.txt";
-    char const *build_fingerprint, *product_device, *product_model, *product_name;
+    char const *build_fingerprint, *product_device, *product_name;
     std::string region;
 
     sysinfo(&sys);
@@ -158,7 +158,6 @@ void vendor_check_variant()
 
     // Override props based on values set
     property_override_dual("ro.product.device", "ro.vendor.product.device", product_device);
-    property_override_dual("ro.product.model", "ro.vendor.product.model", product_model);
     property_override_dual("ro.product.name", "ro.vendor.product.name", product_name);
     property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", build_fingerprint);
 
