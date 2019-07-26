@@ -5,9 +5,9 @@
   "branch"     : "pie"     
  },
  {
-  "repository" : "KudProject/kernel_asus_sdm660",
+  "repository" : "DerpGang/kernel_asus_sdm660",
   "target_path": "kernel/asus/sdm660",
-  "branch"     : "lineage-16.0"
+  "branch"     : "9.0"
  },
  {
   "repository" : "rebenok90x/android_hardware_qcom_display",
