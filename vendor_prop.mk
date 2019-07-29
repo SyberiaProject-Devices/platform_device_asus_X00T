@@ -256,6 +256,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.enable_vds=1 \
     persist.sys.wfd.virtual=0
 
+#WhatsApp
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.camera.hal1.packagelist=com.whatsapp
+
 # ZRAM disk
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.config.zram=true
