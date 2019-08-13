@@ -48,7 +48,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.btstack.enable.splita2dp=true \
     ro.bluetooth.emb_wp_mode=true \
     ro.bluetooth.wipower=true \
-    vendor.qcom.bluetooth.soc=cherokee
+    vendor.bluetooth.soc=cherokee
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -89,7 +89,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # FM
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.fm.a2dp.conc.disabled=false
-    vendor.bluetooth.soc=cherokee
 
 # FRP
 PRODUCT_PROPERTY_OVERRIDES += \
