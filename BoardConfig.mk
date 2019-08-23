@@ -26,8 +26,6 @@ DEVICE_PATH := device/asus/X00T
 
 BOARD_VENDOR := asus
 
-TARGET_USES_MKE2FS := true
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := sdm636
 TARGET_NO_BOOTLOADER := true
