@@ -147,14 +147,6 @@ void vendor_check_variant()
         }
     }
 
-    // Product model overrides
-    if (region == "RU" || region == "TW" ||
-        (region == "PH" && sys.totalram > 3072ull * 1024 * 1024))
-        product_model = "ASUS_X00TDB";
-    else if (sys.totalram < 3072ull * 1024 * 1024)
-        product_model = "ASUS_X00TDA";
-    else
-        product_model = "ASUS_X00TD";
 
     // Override props based on values set
     property_override_dual("ro.product.device", "ro.vendor.product.device", product_device);
